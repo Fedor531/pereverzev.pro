@@ -7,6 +7,6 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'ru' },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1, user-scalable=no',
-    }
-  }
-})
+    },
+  },
+});
