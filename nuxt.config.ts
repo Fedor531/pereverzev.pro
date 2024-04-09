@@ -29,6 +29,10 @@ export default defineNuxtConfig({
     },
   },
 
+  features: {
+    inlineStyles: false,
+  },
+
   devtools: {
     enabled: false,
   },
