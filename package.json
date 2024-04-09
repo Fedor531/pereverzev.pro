@@ -12,11 +12,13 @@
     "not dead"
   ],
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "nuxt:build": "nuxt build",
+    "nuxt:prepare": "nuxt prepare",
+    "nuxt:dev": "nuxt dev",
+    "nuxt:start": "node .output/server/index.mjs",
+    "stylelint-src": "stylelint \"**/*.(css|pcss)\"",
+    "stylelint:check": "pnpm stylelint-src",
+    "stylelint:fix": "pnpm stylelint-src --fix"
   },
   "dependencies": {
     "@csstools/postcss-global-data": "^2.1.1",
