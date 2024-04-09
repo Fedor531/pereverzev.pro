@@ -1,8 +1,18 @@
 <template>
-  <h1>
+  <h1 class="xxx">
     pereverzev.pro !!!
   </h1>
+  <button>
+    Кнопка
+  </button>
 </template>
 
 <script setup lang="ts">
+
 </script>
+
+<style lang="postcss">
+.xxx {
+  color: var(--color);
+}
+</style>
