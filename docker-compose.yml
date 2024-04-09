@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  prod:
+    container_name: pereverzev_front
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
