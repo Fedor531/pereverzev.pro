@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'pereverzev_prod',
       script: '.output/server/index.mjs',
-      max_memory_restart: '600M',
+      max_memory_restart: '800M',
     },
   ],
 };
