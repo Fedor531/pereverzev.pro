@@ -1,4 +1,5 @@
 cd /var/www/pereverzev.pro/nuxt
+sudo docker-compose down
 sudo docker-compose up -d --build
-sudo docker image prune --force
+sudo docker rmi -f $(docker images -aq)
 sudo systemctl restart nginx
