@@ -1,6 +1,6 @@
 <template>
   <h1 class="xxx">
-    pereverzev.pro FEDYA !!!
+    pereverzev.pro!!!
   </h1>
   <button>
     Кнопка
