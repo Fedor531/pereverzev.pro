@@ -1,4 +1,4 @@
-cd /var/www/deverzev.ru/pereverzev-front
+cd /var/www/pereverzev.pro/nuxt
 docker-compose down
 docker rm pereverzev_front
 docker-compose up -d
