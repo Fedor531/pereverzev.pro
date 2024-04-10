@@ -1,5 +1,5 @@
 cd /var/www/pereverzev.pro/nuxt
-sudo docker-compose down
-sudo docker-compose up -d --build
-sudo docker rmi -f $(docker images -aq)
-sudo systemctl restart nginx
+docker-compose down
+docker-compose up -d
+docker rmi -f $(docker images -aq)
+systemctl restart nginx
