@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'path';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -32,6 +32,7 @@ export default defineNuxtConfig({
   features: {
     inlineStyles: false,
   },
+
   devtools: {
     enabled: false,
   },
