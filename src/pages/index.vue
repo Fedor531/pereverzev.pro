@@ -1,6 +1,6 @@
 <template>
   <h1 class="xxx">
-    PEREVERZEV
+    PEREVERZEV.PRO
   </h1>
   <button>
     Кнопка
