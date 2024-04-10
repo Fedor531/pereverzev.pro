@@ -14,5 +14,6 @@
 <style lang="postcss">
 .xxx {
   color: var(--color);
+  background-color: rebeccapurple;
 }
 </style>
