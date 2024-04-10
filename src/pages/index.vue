@@ -1,6 +1,6 @@
 <template>
   <h1 class="xxx">
-     FEDYA !!!
+     FFFFF !!!
   </h1>
   <button>
     Кнопка

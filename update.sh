@@ -1,3 +1,5 @@
-cd /var/www/pereverzev.pro/nuxt
-docker-compose up -d --build
-docker rmi -f $(docker images -aq)
+cd /var/www/deverzev.ru/pereverzev-front
+docker-compose down
+docker rm pereverzev_front
+docker-compose up -d
+docker image prune -f
