@@ -1,5 +1,5 @@
 <template>
   <h1>
-    main
+    Тестовый текст
   </h1>
 </template>
