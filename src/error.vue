@@ -5,5 +5,5 @@
 </template>
 
 <script lang="ts" setup>
-navigateTo('/', { redirectCode: 301 });
+await navigateTo('/', { redirectCode: 301 });
 </script>
