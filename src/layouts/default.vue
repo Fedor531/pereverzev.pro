@@ -18,6 +18,15 @@
 <style lang="postcss">
 .l-default {
   display: flex;
+  flex-direction: column;
   height: 100dvh;
+  padding: 20px;
+  color: white;
+  gap: 30px;
+
+  @media all and (--screen-tablet) {
+    flex-direction: row;
+    gap: 20px;
+  }
 }
 </style>
