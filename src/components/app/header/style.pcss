@@ -9,6 +9,12 @@
   background: var(--gradient-0);
   backdrop-filter: blur(15px);
 
+  &__logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   &__logo {
     display: flex;
     align-items: center;
@@ -24,6 +30,16 @@
     img {
       width: 42px;
     }
+  }
+
+  &__logo-title {
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    color: #c0c0c0;
+
+    font-size: 18px;
+    font-weight: 500;
   }
 
   @media all and (--screen-tablet) {

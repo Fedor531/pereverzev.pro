@@ -8,6 +8,12 @@
         >
           <img src="~/assets/images/logo.svg" alt="logo">
         </NuxtLink>
+        <NuxtLink
+          class="app-header__logo-title"
+          to="/"
+        >
+          pereverzev
+        </NuxtLink>
       </div>
     </div>
     <div class="app-header__bottom">
@@ -17,3 +23,5 @@
 </template>
 
 <style src="./style.pcss" />
+<script setup lang="ts">
+</script>

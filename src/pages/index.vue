@@ -1,5 +1,5 @@
 <template>
   <h1>
-    PEREVERZEV.PRO
+    main
   </h1>
 </template>
