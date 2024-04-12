@@ -15,6 +15,22 @@
           pereverzev
         </NuxtLink>
       </div>
+      <div class="app-header__hero-container">
+        <div class="app-header__hero-image">
+          <img src="~/assets/images/avatar-w-bg.png" alt="avatar" />
+        </div>
+        <div class="app-header__hero-content">
+          <h3 class="app-header__hero-title">
+            Fedor Pereverzev
+          </h3>
+          <p class="app-header__hero-desc">
+            Frontend Developer
+          </p>
+          <span>
+
+          </span>
+        </div>
+      </div>
     </div>
     <div class="app-header__bottom">
 
