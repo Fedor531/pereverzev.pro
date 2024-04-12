@@ -1,4 +1,7 @@
 .app-header {
+  display: flex;
+  flex-direction: column;
+
   padding: 20px;
 
   border: 1px solid rgb(252 252 252 / 5%);
@@ -6,7 +9,25 @@
   background: var(--sidebar-gradient);
   backdrop-filter: blur(15px);
 
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    border: .75px solid rgb(251 251 251 / 5%);
+    background: var(--gradient5);
+    backdrop-filter: blur(0);
+
+    img {
+      width: 42px;
+    }
+  }
+
   @media all and (--screen-tablet) {
+    height: 100%;
     padding: 34px 20px 24px;
   }
 
