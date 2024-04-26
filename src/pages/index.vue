@@ -22,6 +22,7 @@ onMounted(() => {
     const url = reg_path + filename;
     const store = await caches.open( "name-forcer" );
     await store.put( url, new Response( file ) );
+    console.log(await store.keys())
     const frame = document.createElement( "iframe" );
     frame.width = 400
     frame.height = 500;
