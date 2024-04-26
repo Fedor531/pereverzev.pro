@@ -6,8 +6,8 @@
 
 
 <script lang="ts" setup>
+onMounted(async () => {
 
-onMounted(() => {
   const inp = document.querySelector( "input" );
   inp.onchange = e => {
     const file = inp.files[0];
