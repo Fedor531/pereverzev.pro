@@ -1,9 +1,9 @@
 <template>
   <NuxtLayout>
-    <NuxtPage/>
+    404
   </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
-await navigateTo('/', { redirectCode: 301 });
+// await navigateTo('/', { redirectCode: 301 });
 </script>
