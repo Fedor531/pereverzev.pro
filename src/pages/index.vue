@@ -11,8 +11,7 @@ onMounted(() => {
   const inp = document.querySelector( "input" );
   inp.onchange = e => {
     const file = inp.files[0];
-    displayRenamedPDF(file, '[forced]' + file.name)
-      .then(console.log);
+    displayRenamedPDF(file, 'giga_test' + file.name)
   }
 
   async function displayRenamedPDF(file, filename) {
@@ -23,6 +22,10 @@ onMounted(() => {
     const store = await caches.open( "name-forcer" );
     await store.put( url, new Response( file ) );
     console.log(await store.keys())
+
+    window.open(url);
+
+    return
     const frame = document.createElement( "iframe" );
     frame.width = 400
     frame.height = 500;
