@@ -14,7 +14,6 @@ onMounted(async () => {
     const file = inp.files[0];
     displayRenamedPDF(file, 'giga_test' + file.name)
   }
-
   async function displayRenamedPDF(file, filename) {
     // we use an hard-coded fake path
     // to not interfere with legit requests
