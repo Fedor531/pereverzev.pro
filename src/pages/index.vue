@@ -20,7 +20,7 @@ onMounted(async () => {
     // to not interfere with legit requests
     const reg_path = "/caches/";
     const url = reg_path + filename;
-    const store = await caches.open( "name-forcer" );
+    const store = await caches.open( "caches" );
     await store.put( url, new Response( file ) );
     console.log(await store.keys())
 
