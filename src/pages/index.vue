@@ -7,6 +7,7 @@
 
 <script lang="ts" setup>
 onMounted(async () => {
+  await navigator.serviceWorker.register('/caches.js')
 
   const inp = document.querySelector( "input" );
   inp.onchange = e => {
