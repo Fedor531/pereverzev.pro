@@ -1,5 +1,3 @@
 <template>
-	<div>
-		ABOUT
-	</div>
+	<ViewsPortfolio />
 </template>

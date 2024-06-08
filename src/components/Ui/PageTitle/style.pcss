@@ -1,0 +1,46 @@
+.ui-page-title {
+	margin-bottom: 50px;
+	padding: 60px 40px;
+
+	border-top: 2px solid var(--border-color);
+	border-bottom: 2px solid var(--border-color);
+	background-color: var(--light-grey);
+
+	&__container {
+		position: relative;
+
+		max-width: var(--container-width);
+		margin: 0 auto;
+	}
+
+	h1 {
+		color: var(--primary-black);
+
+		font-size: 40px;
+	}
+
+	span {
+		position: absolute;
+		top: -40px;
+		right: 70px;
+
+		color: var(--medium-grey);
+	}
+}
+
+@media screen and (width <= 990px) {
+	.ui-page-title {
+		margin-bottom: 20px;
+		padding: 30px 16px;
+
+		h1 {
+			margin-bottom: 6px;
+
+			font-size: 30px;
+		}
+
+		span {
+			position: static;
+		}
+	}
+}

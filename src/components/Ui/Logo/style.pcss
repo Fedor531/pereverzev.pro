@@ -1,0 +1,47 @@
+.ui-logo {
+  display: flex;
+  align-items: center;
+
+  &__letter {
+    margin-right: 8px;
+  }
+}
+
+.logo-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  color: var(--white);
+  border-radius: 100px;
+  background-color: var(--primary-blue);
+
+  font-size: var(--fs-4xl);
+  font-weight: 600;
+}
+
+.logo-text {
+  color: var(--super-black);
+
+  font-size: var(--fs-xl);
+
+  &__name {
+    font-weight: 600;
+  }
+}
+
+@media all and (width <= 990px) {
+  .logo-letter {
+    width: 32px;
+    height: 32px;
+
+    font-size: var(--fs-lg);
+  }
+
+  .logo-text {
+    font-size: var(--fs-lg);
+  }
+}

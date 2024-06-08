@@ -1,0 +1,16 @@
+# editorconfig.org
+root = true
+
+[*]
+indent_style = tab
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[{*.ng, *.sht, *.html, *.shtm, *.shtml, *.htm}]
+ij_html_do_not_indent_children_of_tags = html, body, thead, tbody, tfoot, script, style

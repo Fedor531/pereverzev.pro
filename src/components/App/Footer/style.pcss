@@ -1,0 +1,35 @@
+.app-footer {
+	margin-top: 60px;
+	padding: 16px 40px;
+
+	border-top: 2px solid var(--border-color);
+
+	background-color: var(--light-grey);
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+
+		width: 100%;
+		max-width: var(--container-width);
+
+		margin: 0 auto;
+	}
+
+	&__copyrights {
+		font-size: var(--fs-sm);
+	}
+}
+
+
+@media all and (width <= 990px) {
+	.app-footer {
+		margin-top: 40px;
+
+		&__content {
+			flex-direction: column;
+		}
+	}
+}

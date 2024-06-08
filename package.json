@@ -4,7 +4,7 @@
   "repository": "https://github.com/Fedor531/pereverzev.pro",
   "type": "module",
   "engines": {
-    "node": ">=18.17.1"
+    "node": ">=18.16.1"
   },
   "browserslist": [
     "> 1%",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@csstools/postcss-global-data": "^2.1.1",
-    "nuxt": "^3.11.2",
+    "nuxt": "3.11.2",
     "postcss-custom-media": "^10.0.4",
     "postcss-nested": "^6.0.1",
     "postcss-normalize": "^10.0.1",

@@ -1,0 +1,39 @@
+.app-header {
+	position: relative;
+	z-index: var(--z-header);
+
+	display: flex;
+	justify-content: center;
+
+	min-height: 84px;
+	padding: 20px 40px;
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		width: 100%;
+
+		max-width: var(--container-width);
+	}
+}
+
+@media all and (width <= 990px) {
+	.app-header {
+		min-height: 52px;
+		padding: 0;
+
+		&__content {
+			position: fixed;
+
+			padding: 10px 16px;
+
+			border-bottom: 1px solid var(--border-color);
+
+			background-color: var(--white);
+
+			box-shadow: 0 0 10px 0 rgb(0 0 0 / 8%);
+		}
+	}
+}
