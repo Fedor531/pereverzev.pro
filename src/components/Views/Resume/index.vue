@@ -7,20 +7,22 @@
 
 		<div class="p-resume__timelines">
 			<div class="p-resume__content">
-<!--				<OTimeline-->
-<!--					title="Опыт работы"-->
-<!--					:list="works"-->
-<!--				/>-->
-<!--				<OTimeline-->
-<!--					title="Самозанятость"-->
-<!--					:list="selfEmployment"-->
-<!--				/>-->
+				<ResumeExperience
+					title="Опыт работы"
+					:list="works"
+				/>
+				<ResumeExperience
+					title="Самозанятость"
+					:list="selfEmployment"
+				/>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
+import ResumeExperience from './components/ResumeExperience/index.vue';
+
 const works = [
 	{
 		id: 3,

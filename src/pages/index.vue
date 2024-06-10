@@ -24,6 +24,10 @@
 				3 4 5 6
 			</li>
 		</ul>
+
+		<UiButton>
+			Тестовый тест
+		</UiButton>
 	</div>
 </template>
 
