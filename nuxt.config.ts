@@ -42,7 +42,7 @@ export default defineNuxtConfig({
 					rel: 'preload',
 					as: 'font',
 					fetchpriority: 'high',
-					href: '/assets/fonts/montserrat-v26-cyrillic_latin-regular.woff2',
+					href: '/assets/fonts/montserrat-v26-cyrillic_latin-700.woff2',
 					type: 'font/woff2',
 					crossorigin: 'anonymous'
 				},
