@@ -13,6 +13,17 @@
 		<span style="font-weight: 700">
 			Федор Тест 700
 		</span>
+		<button>
+			1111
+		</button>
+		<ul>
+			<li>
+				1 2 3 4
+			</li>
+			<li>
+				3 4 5 6
+			</li>
+		</ul>
 	</div>
 </template>
 
