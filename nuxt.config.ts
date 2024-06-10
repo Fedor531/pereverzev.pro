@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 					fetchpriority: 'high',
 					href: '/assets/fonts/montserrat-v26-cyrillic_latin-regular.woff2',
 					type: 'font/woff2',
-					crossorigin: 'anonymous'
+					crossorigin: 'anonymous',
 				},
 				{
 					rel: 'preload',
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
 					fetchpriority: 'high',
 					href: '/assets/fonts/montserrat-v26-cyrillic_latin-500.woff2',
 					type: 'font/woff2',
-					crossorigin: 'anonymous'
+					crossorigin: 'anonymous',
 				},
 				{
 					rel: 'preload',
@@ -36,7 +36,7 @@ export default defineNuxtConfig({
 					fetchpriority: 'high',
 					href: '/assets/fonts/montserrat-v26-cyrillic_latin-600.woff2',
 					type: 'font/woff2',
-					crossorigin: 'anonymous'
+					crossorigin: 'anonymous',
 				},
 				{
 					rel: 'preload',
@@ -44,7 +44,7 @@ export default defineNuxtConfig({
 					fetchpriority: 'high',
 					href: '/assets/fonts/montserrat-v26-cyrillic_latin-700.woff2',
 					type: 'font/woff2',
-					crossorigin: 'anonymous'
+					crossorigin: 'anonymous',
 				},
 			],
 			meta: [
@@ -52,18 +52,23 @@ export default defineNuxtConfig({
 				{ name: 'format-detection', content: 'telephone=no' },
 				{ name: 'format-detection', content: 'address=no' },
 
-				{ name: 'msapplication-TileColor', content: '#040404' },
-				{ name: 'theme-color', content: '#040404' },
+				{ name: 'msapplication-TileColor', content: '#ffffff' },
+				{ name: 'theme-color', content: '#ffffff' },
 				{ name: 'author', content: 'Fedor Pereverzev <fedor531@yandex.ru>' },
-				{ name: 'robots', content: 'index, follow' },
 				{ name: 'description', content: 'Frontend developer | Fedor Pereverzev' },
 			],
+		},
+
+		pageTransition: {
+			name: 'page',
+			mode: 'out-in',
 		},
 	},
 
 	css: [
 		'~/assets/fonts/index.css',
 		'~/assets/styles/variables.pcss',
+		'~/assets/styles/animations.pcss',
 		'~/assets/styles/index.pcss',
 	],
 
@@ -88,5 +93,3 @@ export default defineNuxtConfig({
 		enabled: false,
 	},
 });
-
-// <link rel="icon" href="/icon.svg" type="image/svg+xml">
