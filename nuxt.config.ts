@@ -66,7 +66,7 @@ export default defineNuxtConfig({
 	},
 
 	css: [
-		'~/assets/fonts/index.css',
+		'~/assets/styles/fonts.pcss',
 		'~/assets/styles/variables.pcss',
 		'~/assets/styles/animations.pcss',
 		'~/assets/styles/index.pcss',
