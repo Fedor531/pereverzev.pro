@@ -57,7 +57,6 @@ defineProps({
 
 <style lang="postcss">
 .m-timeline-card {
-	--line-color: #F5F6F9;
 	position: relative;
 
 	padding: 24px 0 20px 40px;
@@ -74,7 +73,7 @@ defineProps({
 
 		content: '';
 
-		background-color: var(--line-color);
+		background-color: var(--border-color);
 	}
 
 	&::after {
@@ -89,7 +88,7 @@ defineProps({
 
 		content: '';
 
-		background-color: var(--line-color);
+		background-color: var(--border-color);
 	}
 
 	&:first-child {
@@ -107,7 +106,7 @@ defineProps({
 		color: var(--primary-grey);
 		border: 2px solid var(--color-blue);
 		border-radius: 30px;
-		background-color: var(--color-white);
+		background-color: var(--background-color);
 
 		font-size: var(--fs-xs);
 		font-weight: 600;

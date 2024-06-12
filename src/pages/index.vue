@@ -13,21 +13,30 @@
 		<span style="font-weight: 700">
 			Федор Тест 700
 		</span>
-		<button>
-			1111
-		</button>
-		<ul>
-			<li>
-				1 2 3 4
-			</li>
-			<li>
-				3 4 5 6
-			</li>
-		</ul>
-
-		<UiButton>
-			Тестовый тест
-		</UiButton>
+		<span style="font-weight: 400">
+			Федор Тест 400
+		</span>
+		<span style="font-weight: 500">
+			Федор Тест 500
+		</span>
+		<span style="font-weight: 600">
+			Федор Тест 600
+		</span>
+		<span style="font-weight: 700">
+			Федор Тест 700
+		</span>
+		<span style="font-weight: 400">
+			Федор Тест 400
+		</span>
+		<span style="font-weight: 500">
+			Федор Тест 500
+		</span>
+		<span style="font-weight: 600">
+			Федор Тест 600
+		</span>
+		<span style="font-weight: 700">
+			Федор Тест 700
+		</span>
 	</div>
 </template>
 
@@ -61,14 +70,5 @@ onMounted(async () => {
 		test.append(frame);
 		frame.src = url;
 	}
-
-// clear previously cached files
-//   (async () => {
-//     const store = await caches.open( "name-forcer" );
-//     const keys = await store.keys();
-//     for( const req of keys ) {
-//       store.delete( req );
-//     }
-//   })();
 });
 </script>

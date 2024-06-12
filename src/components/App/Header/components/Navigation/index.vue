@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="ui-navigation"
+		class="header-navigation"
 		:class="{'is-open': isOpen}"
 	>
 		<nav class="nav">

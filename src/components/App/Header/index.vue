@@ -1,6 +1,6 @@
 <template>
 	<header class="app-header">
-		<div class="app-header__content">
+		<div class="container">
 			<UiLogo />
 			<HeaderNavigation />
 		</div>

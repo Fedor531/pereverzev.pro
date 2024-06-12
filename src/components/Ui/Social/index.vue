@@ -24,9 +24,6 @@
 	display: flex;
 	justify-content: center;
 	gap: 24px;
-
-	.ui-link {
-		font-size: calc(var(--fs-sm) - 1px);
-	}
+	font-size: var(--fs-xs);
 }
 </style>

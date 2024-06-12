@@ -1,6 +1,6 @@
 <template>
 	<footer class="app-footer">
-		<div class="app-footer__content">
+		<div class="container">
 			<UiSocial />
 			<p class="app-footer__copyrights">
 				{{ new Date().getFullYear() }}

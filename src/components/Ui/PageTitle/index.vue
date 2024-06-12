@@ -1,6 +1,6 @@
 <template>
 	<div class="ui-page-title">
-		<div class="ui-page-title__container">
+		<div class="container">
 			<h1>
 				{{ title }}
 			</h1>
@@ -33,11 +33,8 @@ defineProps({
 	border-bottom: 2px solid var(--border-color);
 	background-color: var(--background-color-2);
 
-	&__container {
+	.container {
 		position: relative;
-
-		max-width: var(--container-width);
-		margin: 0 auto;
 	}
 
 	h1 {
@@ -58,13 +55,18 @@ defineProps({
 		margin-bottom: 20px;
 		padding: 30px 16px;
 
-		h1 {
-			margin-bottom: 6px;
+		.container {
+			flex-direction: column;
+		}
 
+		h1 {
 			font-size: 30px;
 		}
 
 		span {
+			display: block;
+			margin-top: 6px;
+
 			position: static;
 		}
 	}
