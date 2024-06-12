@@ -8,6 +8,20 @@ export default defineNuxtConfig({
 			charset: 'utf-8',
 			viewport: 'width=device-width, initial-scale=1, user-scalable=no',
 			title: 'Frontend developer | Fedor Pereverzev',
+			script: [
+				{
+					tagPosition: 'head',
+					innerHTML: `
+						if (matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+							document.documentElement.style.display = 'none';
+							document.head.insertAdjacentHTML(
+								'beforeend',
+								'<link rel="stylesheet" href="/assets/styles/light.css" onload="document.documentElement.style.display=\\'\\'">'
+							);
+						}
+				  `
+				},
+			],
 			link: [
 				{
 					rel: 'shortcut icon',
@@ -46,16 +60,38 @@ export default defineNuxtConfig({
 					type: 'font/woff2',
 					crossorigin: 'anonymous',
 				},
+				{
+					rel: 'stylesheet',
+					media: '(prefers-color-scheme: light)',
+					href: '/assets/styles/light.css'
+				},
+				{
+					rel: 'stylesheet',
+					media: '(prefers-color-scheme: dark)',
+					href: '/assets/styles/dark.css'
+				}
 			],
 			meta: [
 				// Чтобы сафари не выделял номера и адреса
 				{ name: 'format-detection', content: 'telephone=no' },
 				{ name: 'format-detection', content: 'address=no' },
-
-				{ name: 'msapplication-TileColor', content: '#ffffff' },
-				{ name: 'theme-color', content: '#ffffff' },
 				{ name: 'author', content: 'Fedor Pereverzev <fedor531@yandex.ru>' },
 				{ name: 'description', content: 'Frontend developer | Fedor Pereverzev' },
+
+				{
+					name: 'color-scheme',
+					content: 'light dark'
+				},
+				{
+					name: 'theme-color',
+					media: '(prefers-color-scheme: light)',
+					content: '#ffffff',
+				},
+				{
+					name: 'theme-color',
+					media: '(prefers-color-scheme: dark)',
+					content: '#ff0000',
+				},
 			],
 		},
 

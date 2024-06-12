@@ -15,4 +15,49 @@ defineProps({
 });
 </script>
 
-<style lang="postcss" src="./style.pcss" />
+<style lang="postcss">
+.ui-section-title {
+	h2 {
+		position: relative;
+
+		display: flex;
+
+		width: min-content;
+
+		padding-bottom: 8px;
+
+		white-space: nowrap;
+
+		font-size: var(--fs-2xl);
+		font-weight: 600;
+
+		&::before {
+			position: absolute;
+			bottom: 0;
+
+			display: block;
+
+			width: 100%;
+			height: 2px;
+
+			content: '';
+
+			background-color: #F5F5F5;
+		}
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+
+			display: block;
+
+			width: 30px;
+			height: 2px;
+
+			content: '';
+
+			background-color: var(--color-blue);
+		}
+	}
+}
+</style>

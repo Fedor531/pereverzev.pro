@@ -26,4 +26,13 @@ defineProps({
 });
 </script>
 
-<style lang="postcss" src="./style.pcss" />
+<style lang="postcss">
+.ui-link {
+	cursor: pointer;
+	transition: color var(--transition-medium);
+
+	&:hover {
+		color: var(--color-blue);
+	}
+}
+</style>

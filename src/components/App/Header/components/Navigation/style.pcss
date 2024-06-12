@@ -30,7 +30,7 @@
 
 			border-radius: 2px;
 
-			background-color: var(--primary-blue);
+			background-color: var(--color-blue);
 
 			&::before,
 			&::after {
@@ -46,7 +46,7 @@
 
 				border-radius: 2px;
 
-				background-color: var(--primary-blue);
+				background-color: var(--color-blue);
 			}
 
 			&::after {
@@ -58,7 +58,7 @@
 	&.is-open {
 		.menu-burger {
 			& > div {
-				background-color: var(--white);
+				background-color: transparent;
 
 				&::before {
 					top: 0;
@@ -89,18 +89,20 @@
 		}
 	}
 
-	.a-link {
+	.ui-link {
 		border-bottom: 2px solid transparent;
 
 		font-size: var(--fs-sm);
 
+		font-weight: 500;
+
 		&.router-link-exact-active {
-			color: var(--primary-blue);
+			color: var(--color-blue);
 		}
 	}
 }
 
-@media all and (width <= 990px) {
+@media all and (--screen-tablet) {
 	.ui-navigation {
 		.nav {
 			position: fixed;
@@ -115,9 +117,9 @@
 			transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
 			transform: translateX(100%);
 
-			border-left: 1px solid var(--primary-blue);
+			border-left: 1px solid var(--color-blue);
 
-			background-color: var(--white);
+			background-color: var(--background-color);
 			inset: 0;
 		}
 
@@ -135,7 +137,7 @@
 			}
 		}
 
-		.a-link {
+		.ui-link {
 			font-size: var(--fs-3xl);
 		}
 	}

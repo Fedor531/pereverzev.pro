@@ -19,7 +19,14 @@
 	</ul>
 </template>
 
-<script lang="ts" setup>
-</script>
+<style lang="postcss">
+.ui-social {
+	display: flex;
+	justify-content: center;
+	gap: 24px;
 
-<style lang="postcss" src="./style.pcss" />
+	.ui-link {
+		font-size: calc(var(--fs-sm) - 1px);
+	}
+}
+</style>

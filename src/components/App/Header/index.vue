@@ -2,9 +2,13 @@
 	<header class="app-header">
 		<div class="app-header__content">
 			<UiLogo />
-			<UiNavigation />
+			<HeaderNavigation />
 		</div>
 	</header>
 </template>
+
+<script lang="ts" setup>
+import HeaderNavigation from './components/Navigation/index.vue'
+</script>
 
 <style lang="postcss" src="./style.pcss" />

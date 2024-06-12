@@ -105,9 +105,9 @@ defineProps({
 		padding: 0 10px;
 
 		color: var(--primary-grey);
-		border: 2px solid var(--primary-blue);
+		border: 2px solid var(--color-blue);
 		border-radius: 30px;
-		background-color: var(--white);
+		background-color: var(--color-white);
 
 		font-size: var(--fs-xs);
 		font-weight: 600;
@@ -129,16 +129,12 @@ defineProps({
 	h3 {
 		margin: 8px 0;
 
-		color: var(--primary-black);
-
 		font-size: var(--fs-base);
 
 		font-weight: 600
 	}
 
 	&__desc {
-		color: var(--primary-black);
-
 		font-size: var(--fs-sm);
 
 		li {
@@ -148,5 +144,4 @@ defineProps({
 		}
 	}
 }
-
 </style>

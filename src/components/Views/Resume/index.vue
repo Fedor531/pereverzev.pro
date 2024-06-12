@@ -1,19 +1,19 @@
 <template>
-	<div class="p-resume">
+	<div class="resume-page">
 		<UiPageTitle
 			title="Резюме"
-			subTitle="~4 года в IT"
+			subTitle="Коммерческий опыт ~4 года"
 		/>
 
-		<div class="p-resume__timelines">
-			<div class="p-resume__content">
+		<div class="resume-page__experience">
+			<div class="resume-page__content">
 				<ResumeExperience
 					title="Опыт работы"
 					:list="works"
 				/>
 				<ResumeExperience
-					title="Самозанятость"
-					:list="selfEmployment"
+					title="Образование"
+					:list="education"
 				/>
 			</div>
 		</div>
@@ -117,11 +117,29 @@ const selfEmployment = [
 		],
 	},
 ];
+
+const education = [
+	{
+		id: 0,
+		period: '2022 - 2023',
+		company: 'Winestyle',
+		companyLink: 'https://winestyle.ru/',
+		title: 'Middle+ Frontend developer',
+		description: [
+			{
+				text: '— Разработка новго сайта компании на Nuxt.js v3 (composition-api) + TypeScript',
+			},
+			{
+				text: '— Оптимизация скорости работы сайта (кастомная сборка иконок, кеширование компонентов на сервере)',
+			},
+		],
+	},
+];
 </script>
 
 <style lang="postcss">
-.p-resume {
-	&__timelines {
+.resume-page {
+	&__experience {
 		padding: 0 40px;
 	}
 
@@ -134,9 +152,9 @@ const selfEmployment = [
 	}
 }
 
-@media all and (width <= 990px) {
-	.p-resume {
-		&__timelines {
+@media all and (--screen-tablet) {
+	.resume-page {
+		&__experience {
 			padding: 0 16px;
 		}
 
