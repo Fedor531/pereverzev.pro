@@ -5,7 +5,8 @@
 		</legend>
 		<input
 			v-model="colorScheme"
-			class="theme-switcher__radio switcher__radio--light"
+			class="theme-switcher__radio theme-switcher__radio--light"
+			:class="{ 'is-active': colorScheme === 'light' }"
 			type="radio"
 			name="color-scheme"
 			value="light"
@@ -14,7 +15,8 @@
 		>
 		<input
 			v-model="colorScheme"
-			class="theme-switcher__radio switcher__radio--auto"
+			class="theme-switcher__radio theme-switcher__radio--auto"
+			:class="{ 'is-active': colorScheme === 'auto' }"
 			type="radio"
 			name="color-scheme"
 			value="auto"
@@ -23,7 +25,8 @@
 		>
 		<input
 			v-model="colorScheme"
-			class="theme-switcher__radio switcher__radio--dark"
+			class="theme-switcher__radio theme-switcher__radio--dark"
+			:class="{ 'is-active': colorScheme === 'dark' }"
 			type="radio"
 			name="color-scheme"
 			value="dark"
@@ -84,3 +87,74 @@ function switchMedia(scheme) {
 	});
 }
 </script>
+
+
+<style>
+/* Switcher */
+
+.theme-switcher {
+	position: relative;
+	padding: 2px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	border: none;
+}
+
+/* Switcher Legend */
+
+.theme-switcher__legend {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* Switcher Radio */
+
+.theme-switcher__radio {
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 0;
+	width: 30px;
+	height: 30px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 24px;
+	transition: filter 0.1s ease-in;
+	cursor: pointer;
+
+	&.is-active {
+		background-color: var(--color-blue);
+		border-radius: 100%;
+	}
+}
+
+.theme-switcher__radio:focus {
+	outline: none;
+}
+
+.theme-switcher__radio--light {
+	background-image: url('~/assets/images/icons/light.svg');
+}
+
+.theme-switcher__radio--auto {
+	background-image: url('~/assets/images/icons/auto.svg');
+}
+
+.theme-switcher__radio--dark {
+	background-image: url('~/assets/images/icons/dark.svg');
+}
+
+/* Switcher Status */
+
+.theme-switcher__status {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	box-shadow: 0 0 0 2px rgb(0 0 0 / 0.2);
+	border-radius: 18px;
+	background-color: rgb(255 255 255 / 0.5);
+}
+</style>

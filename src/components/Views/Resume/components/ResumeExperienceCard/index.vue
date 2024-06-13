@@ -103,7 +103,7 @@ defineProps({
 		margin: 0 0 5px -40px;
 		padding: 0 10px;
 
-		color: var(--primary-grey);
+		color: var(--secondary-text-color);
 		border: 2px solid var(--color-blue);
 		border-radius: 30px;
 		background-color: var(--background-color);
@@ -119,10 +119,10 @@ defineProps({
 		margin-left: 8px;
 
 		opacity: .8;
-		color: var(--primary-grey);
+		color: var(--secondary-text-color);
 
 		font-size: var(--fs-sm);
-		font-weight: 600;
+		font-weight: 500;
 	}
 
 	h3 {
