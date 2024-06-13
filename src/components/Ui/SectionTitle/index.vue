@@ -42,7 +42,7 @@ defineProps({
 
 			content: '';
 
-			background-color: #F5F5F5;
+			background-color: var(--border-color);
 		}
 
 		&::after {

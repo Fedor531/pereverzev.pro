@@ -19,7 +19,7 @@ export default defineNuxtConfig({
 								'<link rel="stylesheet" href="/assets/styles/light.css" onload="document.documentElement.style.display=\\'\\'">'
 							);
 						}
-				  `
+				  `,
 				},
 			],
 			link: [
@@ -60,16 +60,6 @@ export default defineNuxtConfig({
 					type: 'font/woff2',
 					crossorigin: 'anonymous',
 				},
-				{
-					rel: 'stylesheet',
-					media: '(prefers-color-scheme: light)',
-					href: '/assets/styles/light.css'
-				},
-				{
-					rel: 'stylesheet',
-					media: '(prefers-color-scheme: dark)',
-					href: '/assets/styles/dark.css'
-				}
 			],
 			meta: [
 				// Чтобы сафари не выделял номера и адреса
@@ -80,7 +70,7 @@ export default defineNuxtConfig({
 
 				{
 					name: 'color-scheme',
-					content: 'light dark'
+					content: 'light dark',
 				},
 				{
 					name: 'theme-color',

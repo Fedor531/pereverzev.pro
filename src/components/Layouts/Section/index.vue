@@ -3,7 +3,7 @@
 		class="l-section"
 		:class="[{ full }]"
 	>
-		<div class="l-section__container">
+		<div class="container">
 			<UiSectionTitle :title="title" />
 			<slot />
 		</div>
@@ -25,27 +25,19 @@ defineProps({
 
 <style lang="postcss">
 .l-section {
-	&__container {
-		display: flex;
+	.container {
 		flex-direction: column;
 		gap: 28px;
-
-		width: 100%;
 	}
 
 	&.full {
 		padding: 26px 40px;
-
-		.l-section__container {
-			max-width: var(--container-width);
-			margin: 0 auto;
-		}
 	}
 }
 
 @media all and (--screen-tablet) {
 	.l-section {
-		&__container {
+		.container {
 			gap: 24px;
 		}
 
