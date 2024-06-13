@@ -22,6 +22,7 @@
 
 <script lang="ts" setup>
 import ResumeExperience from './components/ResumeExperience/index.vue';
+import ResumeCertificates from './components/ResumeCertificates/index.vue';
 
 const works = [
 	{
