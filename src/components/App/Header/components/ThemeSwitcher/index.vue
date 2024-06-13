@@ -90,17 +90,14 @@ function switchMedia(scheme) {
 
 
 <style>
-/* Switcher */
-
 .theme-switcher {
 	position: relative;
-	padding: 2px;
+	padding: 3px 4px;
 	display: grid;
+	gap: 2px;
 	grid-template-columns: 1fr 1fr 1fr;
 	border: none;
 }
-
-/* Switcher Legend */
 
 .theme-switcher__legend {
 	position: absolute;
@@ -108,24 +105,17 @@ function switchMedia(scheme) {
 	pointer-events: none;
 }
 
-/* Switcher Radio */
-
 .theme-switcher__radio {
 	-webkit-appearance: none;
 	appearance: none;
 	margin: 0;
-	width: 30px;
-	height: 30px;
+	width: 22px;
+	height: 22px;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 24px;
+	background-size: 22px;
 	transition: filter 0.1s ease-in;
 	cursor: pointer;
-
-	&.is-active {
-		background-color: var(--color-blue);
-		border-radius: 100%;
-	}
 }
 
 .theme-switcher__radio:focus {
