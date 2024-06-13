@@ -116,6 +116,11 @@ function switchMedia(scheme) {
 	background-size: 22px;
 	transition: filter 0.1s ease-in;
 	cursor: pointer;
+
+	&.is-active {
+		background-color: var(--color-blue);
+		border-radius: 100%;
+	}
 }
 
 .theme-switcher__radio:focus {

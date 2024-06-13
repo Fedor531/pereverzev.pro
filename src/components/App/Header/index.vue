@@ -56,10 +56,10 @@ const nav: MenuItem[] = [
 		path: '/resume',
 		title: 'Резюме',
 	},
-	{
-		path: '/portfolio',
-		title: 'Портфолио',
-	},
+	// {
+	// 	path: '/portfolio',
+	// 	title: 'Портфолио',
+	// },
 ];
 
 watch(() => isOpen.value, (newValue) => {
