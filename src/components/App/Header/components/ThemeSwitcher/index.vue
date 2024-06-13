@@ -3,41 +3,40 @@
 		<legend class="theme-switcher__legend">
 			Схема
 		</legend>
-		<input
-			v-model="colorScheme"
-			class="theme-switcher__radio theme-switcher__radio--light"
-			:class="{ 'is-active': colorScheme === 'light' }"
-			type="radio"
-			name="color-scheme"
-			value="light"
-			aria-label="Светлая"
-			@click="setScheme('light')"
+		<button
+			v-for="item in switchers"
+			:key="item.id"
+			class="theme-switcher__radio"
+			:class="{ 'is-active': colorScheme === item.id }"
+			:aria-label="item.title"
+			:title="item.title"
+			@click="setScheme(item.id)"
 		>
-		<input
-			v-model="colorScheme"
-			class="theme-switcher__radio theme-switcher__radio--auto"
-			:class="{ 'is-active': colorScheme === 'auto' }"
-			type="radio"
-			name="color-scheme"
-			value="auto"
-			aria-label="Системная"
-			@click="setScheme('auto')"
-		>
-		<input
-			v-model="colorScheme"
-			class="theme-switcher__radio theme-switcher__radio--dark"
-			:class="{ 'is-active': colorScheme === 'dark' }"
-			type="radio"
-			name="color-scheme"
-			value="dark"
-			aria-label="Тёмная"
-			@click="setScheme('dark')"
-		>
+			<UiIcon :name="item.icon" />
+		</button>
 		<div class="theme-switcher__status" />
 	</fieldset>
 </template>
 
 <script lang="ts" setup>
+const switchers = [
+	{
+		id: 'light',
+		title: 'Светлая',
+		icon: 'sun'
+	},
+	{
+		id: 'auto',
+		title: 'Системная',
+		icon: 'circle'
+	},
+	{
+		id: 'dark',
+		title: 'Тёмная',
+		icon: 'moon'
+	}
+]
+
 const colorScheme = ref<'light' | 'auto' | 'dark'>('auto');
 const savedScheme = useCookie<'light' | 'auto' | 'dark'>('color-scheme').value;
 
@@ -111,35 +110,22 @@ function switchMedia(scheme) {
 	margin: 0;
 	width: 22px;
 	height: 22px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 22px;
-	transition: filter 0.1s ease-in;
 	cursor: pointer;
+	background: none;
+	border: none;
+
+	svg {
+		fill: var(--primary-text-color);
+		max-width: 22px;
+		max-height: 22px;
+	}
 
 	&.is-active {
-		background-color: var(--color-blue);
-		border-radius: 100%;
+		svg {
+			fill: var(--color-blue);;
+		}
 	}
 }
-
-.theme-switcher__radio:focus {
-	outline: none;
-}
-
-.theme-switcher__radio--light {
-	background-image: url('~/assets/images/icons/light.svg');
-}
-
-.theme-switcher__radio--auto {
-	background-image: url('~/assets/images/icons/auto.svg');
-}
-
-.theme-switcher__radio--dark {
-	background-image: url('~/assets/images/icons/dark.svg');
-}
-
-/* Switcher Status */
 
 .theme-switcher__status {
 	position: absolute;
@@ -148,8 +134,7 @@ function switchMedia(scheme) {
 	bottom: 0;
 	left: 0;
 	z-index: -1;
-	box-shadow: 0 0 0 2px rgb(0 0 0 / 0.2);
+	box-shadow: 0 0 0 2px var(--border-color);
 	border-radius: 18px;
-	background-color: rgb(255 255 255 / 0.5);
 }
 </style>

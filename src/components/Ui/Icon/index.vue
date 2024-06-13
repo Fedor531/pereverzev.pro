@@ -1,15 +1,15 @@
 <template>
-  <svg class="ui-icon">
-    <use :href="`/assets/icons.svg#${name}`" />
-  </svg>
+	<svg class="ui-icon">
+		<use :href="`/assets/icons.svg#${name}`" />
+	</svg>
 </template>
 
 <script lang="ts" setup>
 defineProps({
-  name: {
-    type: String,
-    required: true,
-  },
+	name: {
+		type: String,
+		required: true,
+	},
 });
 </script>
 
