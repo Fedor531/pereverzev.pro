@@ -18,6 +18,7 @@ defineProps({
 
 <style lang="postcss">
 .l-section {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
