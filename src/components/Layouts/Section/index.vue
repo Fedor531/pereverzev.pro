@@ -1,10 +1,7 @@
 <template>
-	<section
-		class="l-section"
-		:class="[{ full }]"
-	>
-		<div class="container">
-			<UiSectionTitle :title="title" />
+	<section class="l-section">
+		<UiSectionTitle :title="title" />
+		<div class="l-section__content">
 			<slot />
 		</div>
 	</section>
@@ -16,34 +13,19 @@ defineProps({
 		type: String,
 		required: true,
 	},
-	full: {
-		type: Boolean,
-		default: false,
-	},
 });
 </script>
 
 <style lang="postcss">
 .l-section {
-	.container {
-		flex-direction: column;
-		gap: 28px;
-	}
-
-	&.full {
-		padding: 26px 40px;
-	}
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
 }
 
 @media all and (--screen-tablet) {
 	.l-section {
-		.container {
-			gap: 24px;
-		}
-
-		&.full {
-			padding: 26px 16px;
-		}
+		gap: 24px;
 	}
 }
 
