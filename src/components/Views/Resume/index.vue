@@ -17,7 +17,6 @@
 						:list="education"
 					/>
 				</div>
-				<ResumeCertificates />
 			</div>
 		</div>
 	</div>
@@ -26,22 +25,22 @@
 <script lang="ts" setup>
 import ResumeExperience from './components/ResumeExperience/index.vue';
 import ResumeCertificates from './components/ResumeCertificates/index.vue';
-
+// period: '2022 - н.в.',
 const works = [
 	{
 		id: 3,
-		period: '2022 - н.в.',
+		period: '2022 - 2024',
 		company: 'ООО «ЭЙС Солюшнс»',
 		companyLink: 'https://code-pilots.ru/',
 		title: 'Middle+ Frontend developer',
 		description: [
 			{
 				text: '— Разработка e-commerce проектов на Nuxt.js v3 (Composition API) + Pinia, TypeScript',
-				// portfolioLink: '/portfolio/#toomanygifts',
+				portfolioLink: '/portfolio/#toomanygifts',
 			},
 			{
 				text: '— Разработка на Vue v3, TypeScript (админки для e-commerce проектов, личные кабинеты)',
-				// portfolioLink: '/portfolio/#admin-panels',
+				portfolioLink: '/portfolio/#admin-panels',
 			},
 			{
 				text: '— Доработка и исправление багов opensource проекта, написанного внутри компании на Vue.js v3, TypeScript.',
@@ -124,18 +123,35 @@ const selfEmployment = [
 
 const education = [
 	{
-		id: 0,
-		period: '2022 - 2023',
-		company: 'Winestyle',
-		companyLink: 'https://winestyle.ru/',
-		title: 'Middle+ Frontend developer',
+		id: 2,
+		period: '2024 - н.в.',
+		company: 'Томский Государственный Архитектурно-Строительный Университет',
+		companyLink: 'https://tsuab.ru',
+		title: 'Прикладная информатика в менеджменте',
+		description: [],
+	},
+	{
+		id: 1,
+		period: '2021',
+		company: 'Udemy',
+		companyLink: 'https://www.udemy.com/',
+		title: 'Node JS. Практический курс. (Mongo, GraphQL, MySQL, Express)',
 		description: [
-			{
-				text: '— Разработка новго сайта компании на Nuxt.js v3 (composition-api) + TypeScript',
-			},
-			{
-				text: '— Оптимизация скорости работы сайта (кастомная сборка иконок, кеширование компонентов на сервере)',
-			},
+			// {
+			// 	text: '— 111',
+			// },
+		],
+	},
+	{
+		id: 0,
+		period: '2020',
+		company: 'Яндекс Практикум',
+		companyLink: 'https://practicum.yandex.ru/',
+		title: 'Frontend developer',
+		description: [
+			// {
+			// 	text: '— 111',
+			// },
 		],
 	},
 ];
