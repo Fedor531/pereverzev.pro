@@ -1,12 +1,10 @@
 <template>
 	<LayoutsSection :title="title">
-		<div class="o-timeline">
-			<ResumeExperienceCard
-				v-for="item in list"
-				:key="item.id"
-				:item="item"
-			/>
-		</div>
+		<ResumeExperienceCard
+			v-for="item in list"
+			:key="item.id"
+			:item="item"
+		/>
 	</LayoutsSection>
 </template>
 

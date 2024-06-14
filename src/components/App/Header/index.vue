@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="app-header"
+		class="app-header global-padding"
 		:class="{'mobile-menu-is-open': isOpen}"
 	>
 		<div class="container">

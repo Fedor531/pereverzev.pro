@@ -1,5 +1,5 @@
 <template>
-	<div class="ui-page-title">
+	<div class="ui-page-title global-padding">
 		<div class="container">
 			<h1>
 				{{ title }}
@@ -27,7 +27,8 @@ defineProps({
 <style lang="postcss">
 .ui-page-title {
 	margin-bottom: 50px;
-	padding: 60px 40px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 
 	border-top: 2px solid var(--border-color);
 	border-bottom: 2px solid var(--border-color);
@@ -53,7 +54,8 @@ defineProps({
 @media all and (--screen-tablet) {
 	.ui-page-title {
 		margin-bottom: 20px;
-		padding: 30px 16px;
+		padding-top: 30px;
+		padding-bottom: 30px;
 
 		.container {
 			flex-direction: column;

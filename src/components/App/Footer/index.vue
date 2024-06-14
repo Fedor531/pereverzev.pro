@@ -1,5 +1,5 @@
 <template>
-	<footer class="app-footer">
+	<footer class="app-footer global-padding">
 		<div class="container">
 			<UiSocial />
 			<p class="app-footer__copyrights">

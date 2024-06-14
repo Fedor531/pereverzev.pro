@@ -5,16 +5,19 @@
 			subTitle="Коммерческий опыт ~4 года"
 		/>
 
-		<div class="resume-page__experience">
-			<div class="resume-page__content">
-				<ResumeExperience
-					title="Опыт работы"
-					:list="works"
-				/>
-				<ResumeExperience
-					title="Образование"
-					:list="education"
-				/>
+		<div class="global-padding">
+			<div class="container">
+				<div class="resume-page__experience">
+					<ResumeExperience
+						title="Опыт работы"
+						:list="works"
+					/>
+					<ResumeExperience
+						title="Образование"
+						:list="education"
+					/>
+				</div>
+				<ResumeCertificates />
 			</div>
 		</div>
 	</div>
@@ -140,11 +143,11 @@ const education = [
 
 <style lang="postcss">
 .resume-page {
-	&__experience {
-		padding: 0 40px;
+	.container {
+		flex-direction: column;
 	}
 
-	&__content {
+	&__experience {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		max-width: var(--container-width);
@@ -156,10 +159,6 @@ const education = [
 @media all and (--screen-tablet) {
 	.resume-page {
 		&__experience {
-			padding: 0 16px;
-		}
-
-		&__content {
 			grid-template-columns: 1fr;
 			gap: 20px;
 			flex-direction: column;
