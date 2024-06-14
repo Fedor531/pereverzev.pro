@@ -113,17 +113,24 @@ function switchMedia(scheme) {
 	background: none;
 	border: none;
 
-	svg {
+	&:hover:not(&.is-active) {
+		.ui-icon {
+			opacity: .8;
+		}
+	}
+
+	.ui-icon {
 		fill: var(--primary-text-color);
 		width: 100%;
 		height: 100%;
 		max-width: none;
 		max-height: none;
+		transition: opacity var(--transition-medium);
 	}
 
 	&.is-active {
-		svg {
-			fill: var(--color-blue);;
+		.ui-icon {
+			fill: var(--color-blue);
 		}
 	}
 }
