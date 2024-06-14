@@ -23,19 +23,19 @@ const switchers = [
 	{
 		id: 'light',
 		title: 'Светлая',
-		icon: 'sun'
+		icon: 'sun',
 	},
 	{
 		id: 'auto',
 		title: 'Системная',
-		icon: 'circle'
+		icon: 'circle',
 	},
 	{
 		id: 'dark',
 		title: 'Тёмная',
-		icon: 'moon'
-	}
-]
+		icon: 'moon',
+	},
+];
 
 const colorScheme = ref<'light' | 'auto' | 'dark'>('auto');
 const savedScheme = useCookie<'light' | 'auto' | 'dark'>('color-scheme').value;
@@ -87,7 +87,6 @@ function switchMedia(scheme) {
 }
 </script>
 
-
 <style>
 .theme-switcher {
 	position: relative;
@@ -116,8 +115,10 @@ function switchMedia(scheme) {
 
 	svg {
 		fill: var(--primary-text-color);
-		max-width: 22px;
-		max-height: 22px;
+		width: 100%;
+		height: 100%;
+		max-width: none;
+		max-height: none;
 	}
 
 	&.is-active {

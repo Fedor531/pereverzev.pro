@@ -1,17 +1,18 @@
 <template>
-	<header class="app-header">
+	<header
+		class="app-header"
+		:class="{'mobile-menu-is-open': isOpen}"
+	>
 		<div class="container">
 			<UiLogo />
-			<div
-				class="header-navigation"
-				:class="{'is-open': isOpen}"
-			>
-				<nav class="nav">
-					<ul class="menu">
+
+			<div class="app-header__menu">
+				<nav class="app-header__menu-nav">
+					<ul class="app-header__menu-list">
 						<li
 							v-for="item in nav"
 							:key="item.path"
-							class="menu__item"
+							class="app-header__menu-item"
 							@click="isOpen = false"
 						>
 							<UiLink :to="item.path">
@@ -20,15 +21,16 @@
 						</li>
 					</ul>
 				</nav>
-				<button
-					class="menu-burger"
-					aria-label="Мобильное меню"
-					@click.prevent="toggleMenu"
-				>
-					<div />
-				</button>
+				<ThemeSwitcher />
 			</div>
-			<ThemeSwitcher />
+
+			<button
+				class="app-header__menu-burger"
+				aria-label="Мобильное меню"
+				@click.prevent="toggleMenu"
+			>
+				<div />
+			</button>
 		</div>
 	</header>
 </template>

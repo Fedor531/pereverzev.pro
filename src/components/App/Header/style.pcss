@@ -12,31 +12,14 @@
 		align-items: center;
 		justify-content: space-between;
 	}
-}
 
-@media all and (--screen-tablet) {
-	.app-header {
-		min-height: 52px;
-		padding: 0;
-
-		.container {
-			position: fixed;
-
-			padding: 10px 16px;
-
-			border-bottom: 1px solid var(--border-color);
-
-			background-color: var(--background-color);
-
-			box-shadow: 0 0 10px 0 rgb(0 0 0 / 8%);
-		}
+	&__menu {
+		display: flex;
+		align-items: center;
+		gap: 40px;
 	}
-}
 
-.header-navigation {
-	display: flex;
-
-	.menu-burger {
+	&__menu-burger {
 		position: relative;
 
 		z-index: 2;
@@ -92,8 +75,28 @@
 		}
 	}
 
-	&.is-open {
-		.menu-burger {
+	&__menu-list {
+		display: flex;
+		align-items: center;
+		gap: 40px;
+	}
+
+	&__menu-item {
+		.ui-link {
+			border-bottom: 2px solid transparent;
+
+			font-size: var(--fs-sm);
+
+			font-weight: 500;
+
+			&.router-link-exact-active {
+				color: var(--color-blue);
+			}
+		}
+	}
+
+	&.mobile-menu-is-open {
+		.app-header__menu-burger {
 			& > div {
 				background-color: transparent;
 
@@ -111,42 +114,36 @@
 			}
 		}
 
-		.nav {
+		.app-header__menu {
 			transform: translateX(0);
 		}
 	}
 }
 
-.menu {
-	display: flex;
-
-	&__item {
-		&:not(:last-child) {
-			margin-right: 40px;
-		}
-	}
-
-	.ui-link {
-		border-bottom: 2px solid transparent;
-
-		font-size: var(--fs-sm);
-
-		font-weight: 500;
-
-		&.router-link-exact-active {
-			color: var(--color-blue);
-		}
-	}
-}
-
 @media all and (--screen-tablet) {
-	.header-navigation {
-		.nav {
+	.app-header {
+		min-height: 52px;
+		padding: 0;
+
+		.container {
+			position: fixed;
+
+			height: 52px;
+
+			padding: 10px 16px;
+
+			border-bottom: 1px solid var(--border-color);
+
+			background-color: var(--background-color);
+
+			box-shadow: 0 0 10px 0 rgb(0 0 0 / 8%);
+		}
+
+		&__menu {
 			position: fixed;
 			z-index: 1;
 
-			display: flex;
-			align-items: center;
+			flex-direction: column;
 			justify-content: center;
 
 			height: 100vh; /* Fallback */
@@ -161,22 +158,34 @@
 			inset: 0;
 		}
 
-		.menu-burger {
+		&__menu-burger {
 			display: flex;
 		}
-	}
 
-	.menu {
-		flex-direction: column;
+		&__menu-list {
+			flex-direction: column;
+			gap: 30px;
+		}
 
-		&__item {
-			&:not(:last-child) {
-				margin: 0 0 30px;
+		&__menu-item {
+			.ui-link {
+				font-size: var(--fs-3xl);
 			}
 		}
 
-		.ui-link {
-			font-size: var(--fs-3xl);
+		.theme-switcher {
+			position: absolute;
+			bottom: 30px;
+			left: 50%;
+			gap: 4px;
+			padding: 4px 5px;
+
+			transform: translateX(-50%);
+
+			&__radio {
+				width: 28px;
+				height: 28px;
+			}
 		}
 	}
 }
