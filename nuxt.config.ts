@@ -4,7 +4,6 @@ export default defineNuxtConfig({
 	srcDir: 'src',
 	app: {
 		head: {
-			htmlAttrs: { lang: 'ru' },
 			charset: 'utf-8',
 			viewport: 'width=device-width, initial-scale=1, user-scalable=no',
 			title: 'Frontend developer | Fedor Pereverzev',
@@ -97,6 +96,11 @@ export default defineNuxtConfig({
 		'~/assets/styles/animations.pcss',
 		'~/assets/styles/index.pcss',
 	],
+
+	modules: ['@nuxtjs/i18n'],
+	i18n: {
+		vueI18n: 'i18n.config.ts' // if you are using custom path, default
+	},
 
 	postcss: {
 		plugins: {
