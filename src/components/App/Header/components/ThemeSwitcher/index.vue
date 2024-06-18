@@ -55,15 +55,17 @@ onMounted(() => {
 	darkStyles = document.querySelectorAll('link[rel=stylesheet][data-theme=dark]');
 });
 
+const colorSchemeCookie = useCookie('color-scheme', { domain: `.${host}`, maxAge: 2678400 });
+
 function setScheme(scheme) {
 	colorScheme.value = scheme;
 	switchMedia(scheme);
 
 	if (scheme === 'auto') {
-		useCookie('color-scheme').value = '';
+		colorSchemeCookie.value = '';
 	}
 	else {
-		useCookie('color-scheme', { domain: `.${host}`, maxAge: 2678400 }).value = scheme;
+		colorSchemeCookie.value = scheme;
 	}
 }
 
