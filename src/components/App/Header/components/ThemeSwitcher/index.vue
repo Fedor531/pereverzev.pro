@@ -19,6 +19,9 @@
 </template>
 
 <script lang="ts" setup>
+const config = useRuntimeConfig();
+const host = config.public.NUXT_SITE_HOST;
+
 const switchers = [
 	{
 		id: 'light',
@@ -60,7 +63,7 @@ function setScheme(scheme) {
 		useCookie('color-scheme').value = '';
 	}
 	else {
-		useCookie('color-scheme', { domain: '.pereverzev.pro', maxAge: 2678400 }).value = scheme;
+		useCookie('color-scheme', { domain: `.${host}`, maxAge: 2678400 }).value = scheme;
 	}
 }
 

@@ -10,7 +10,7 @@
 	.container {
 		align-items: center;
 		justify-content: space-between;
-		gap: 10px;
+		gap: 20px;
 	}
 
 	&__copyrights {
@@ -18,9 +18,20 @@
 	}
 
 	&__langs {
+		display: flex;
+		gap: 6px;
+
+		margin-left: auto;
+
 		font-size: var(--fs-xs);
 
-		a {}
+		a {
+			&.is-active {
+				color: var(--color-blue);
+
+				font-weight: 500;
+			}
+		}
 	}
 }
 
@@ -31,6 +42,11 @@
 
 		.container {
 			flex-direction: column;
+			gap: 10px;
+		}
+
+		&__langs {
+			margin-left: 0;
 		}
 	}
 }
