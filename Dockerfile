@@ -15,7 +15,17 @@ FROM installer as builder
 WORKDIR /app
 COPY . ./
 COPY --from=installer /app/node_modules ./node_modules
-ARG ENVIRONMENT
+
+# Add environment variables for production build
+ARG NUXT_ENVIRONMENT
+ARG NUXT_SITE_PROTOCOL
+ARG NUXT_SITE_HOST
+
+# Export them as environment variables
+ENV NUXT_ENVIRONMENT=${NUXT_ENVIRONMENT}
+ENV NUXT_SITE_PROTOCOL=${NUXT_SITE_PROTOCOL}
+ENV NUXT_SITE_HOST=${NUXT_SITE_HOST}
+
 RUN pnpm nuxt:build
 
 # Run

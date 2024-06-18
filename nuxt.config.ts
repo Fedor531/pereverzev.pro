@@ -90,6 +90,14 @@ export default defineNuxtConfig({
 		},
 	},
 
+	runtimeConfig: {
+		public: {
+			NUXT_ENVIRONMENT: process.env.NUXT_ENVIRONMENT || '',
+			NUXT_SITE_PROTOCOL: process.env.NUXT_SITE_PROTOCOL || '',
+			NUXT_SITE_HOST: process.env.NUXT_SITE_HOST || '',
+		},
+	},
+
 	css: [
 		'~/assets/styles/fonts.pcss',
 		'~/assets/styles/variables.pcss',
@@ -99,7 +107,7 @@ export default defineNuxtConfig({
 
 	modules: ['@nuxtjs/i18n'],
 	i18n: {
-		vueI18n: 'i18n.config.ts' // if you are using custom path, default
+		vueI18n: './i18n.config.ts',
 	},
 
 	postcss: {

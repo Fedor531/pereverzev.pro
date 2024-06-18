@@ -9,6 +9,8 @@
 </template>
 
 <script lang="ts" setup>
+console.log('NUXT_ENVIRONMENT', useRuntimeConfig().public.NUXT_ENVIRONMENT)
+
 const colorScheme = useCookie('color-scheme');
 
 let lightMedia = '(prefers-color-scheme: light)';

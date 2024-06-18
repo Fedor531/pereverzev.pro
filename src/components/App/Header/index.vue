@@ -16,7 +16,7 @@
 							@click="isOpen = false"
 						>
 							<UiLink :to="item.path">
-								{{ item.title }}
+								{{ $t(`header.menu.${item.titleKey}`) }}
 							</UiLink>
 						</li>
 					</ul>
@@ -40,7 +40,7 @@ import ThemeSwitcher from './components/ThemeSwitcher/index.vue';
 
 interface MenuItem {
 	path: string,
-	title: string,
+	titleKey: string,
 }
 
 const isOpen = ref<boolean>(false);
@@ -52,11 +52,11 @@ const toggleMenu = () => {
 const nav: MenuItem[] = [
 	{
 		path: '/',
-		title: 'Главная',
+		titleKey: 'main',
 	},
 	{
 		path: '/resume',
-		title: 'Резюме',
+		titleKey: 'resume',
 	},
 	// {
 	// 	path: '/portfolio',
