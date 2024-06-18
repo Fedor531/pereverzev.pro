@@ -60,7 +60,7 @@ function setScheme(scheme) {
 		useCookie('color-scheme').value = '';
 	}
 	else {
-		useCookie('color-scheme').value = scheme;
+		useCookie('color-scheme', { domain: '.pereverzev.pro' }).value = scheme;
 	}
 }
 
