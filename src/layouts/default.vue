@@ -38,15 +38,10 @@ useHead({
 	],
 })
 
-onMounted(() => {
-	const setVh = () => {
-		const vh = window.innerHeight * 0.01;
-		document.documentElement.style.setProperty('--vh', `${vh}px`);
-	};
-
-	window.addEventListener('resize', setVh);
-	setVh();
-
+const initYM = () => {
+	if (typeof window.ym === 'function') {
+		return
+	}
 
 	const script = document.createElement('script')
 	script.setAttribute('defer', '')
@@ -68,7 +63,17 @@ onMounted(() => {
 	const noscript = document.createElement('noscript')
 	noscript.innerHTML = `<div><img src="https://mc.yandex.ru/watch/97752129" style="position:absolute; left:-9999px;" alt="" /></div>`
 	document.body.appendChild(noscript)
+}
 
+onMounted(() => {
+	const setVh = () => {
+		const vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	};
+
+	window.addEventListener('resize', setVh);
+	setVh();
+	window.addEventListener('scroll', initYM)
 });
 </script>
 
