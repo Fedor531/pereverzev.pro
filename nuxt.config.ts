@@ -89,6 +89,29 @@ export default defineNuxtConfig({
 			mode: 'out-in',
 		},
 	},
+	routeRules: {
+		'/client/default': {
+			ssr: false,
+		},
+		'/client/pre-render': {
+			ssr: false,
+			prerender: true // Соберет страничку, но запрос за данными будет будет на клиенте
+		},
+		'/client/cache-swr-30-s-date': { // Cache на клиенте не работает
+			ssr: false,
+			swr: true, // Данные запрашиваются и кешируются, след обновление через 30 секунд принудительно
+		},
+
+		'/ssr/pre-render': {
+			prerender: true // Вызывается запрос useAsyncData или useFetch при билде и складывается в /pre-render-ssr/_payload.json, НО ЗАПРОС БОЛЬШЕ НЕ БУДЕТ ПРОИСХОДИТ НА СЕРВЕРЕ, ПРОИСХОДИТ ОДИН РАЗ НА ПРИ СБОРКЕ, ТО есть данные сложаться один раз
+		},
+		'/ssr/cache-swr': {
+			swr: true, // Данные запрашиваются и кешируются, фоном на сервере идет запрос и если данные с api отличаются, кеш обновляется
+		},
+		'/ssr/cache-swr-30-s-date': {
+			swr: 30, // Данные запрашиваются и кешируются, след обновление через 30 секунд принудительно
+		},
+	},
 
 	runtimeConfig: {
 		public: {
