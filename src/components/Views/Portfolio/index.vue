@@ -1,9 +1,6 @@
 <template>
-	<div class="resume-page">
+	<div class="portfolio-page">
 		<UiPageTitle title="Портфолио" />
 	</div>
 </template>
 
-<script setup lang="ts">
-
-</script>

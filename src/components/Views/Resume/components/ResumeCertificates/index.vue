@@ -1,6 +1,5 @@
 <template>
 	<LayoutsSection title="Сертификаты">
-		11111
 	</LayoutsSection>
 </template>
 
