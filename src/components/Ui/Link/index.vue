@@ -17,12 +17,12 @@ type LinkType = 'internal' | 'external'
 defineProps({
 	type: {
 		type: String as PropType<LinkType>,
-		default: 'internal',
+		default: 'internal'
 	},
 	to: {
 		type: String,
-		required: true,
-	},
+		required: true
+	}
 });
 </script>
 

@@ -36,16 +36,16 @@ const works = [
 		description: [
 			{
 				text: '— Разработка e-commerce проектов на Nuxt.js v3 (Composition API) + Pinia, TypeScript',
-				portfolioLink: '/portfolio/#toomanygifts',
+				portfolioLink: '/portfolio/#toomanygifts'
 			},
 			{
 				text: '— Разработка на Vue v3, TypeScript (админки для e-commerce проектов, личные кабинеты)',
-				portfolioLink: '/portfolio/#admin-panels',
+				portfolioLink: '/portfolio/#admin-panels'
 			},
 			{
-				text: '— Доработка и исправление багов opensource проекта, написанного внутри компании на Vue.js v3, TypeScript.',
-			},
-		],
+				text: '— Доработка и исправление багов opensource проекта, написанного внутри компании на Vue.js v3, TypeScript.'
+			}
+		]
 	},
 	{
 		id: 2,
@@ -55,15 +55,15 @@ const works = [
 		title: 'Middle Frontend developer',
 		description: [
 			{
-				text: '— Разработка и внедрение нового интерфейса на нативном JavaScript, TypeScript, jQuery, Riot.js, Node.js',
+				text: '— Разработка и внедрение нового интерфейса на нативном JavaScript, TypeScript, jQuery, Riot.js, Node.js'
 			},
 			{
-				text: '— Работа с legacy кодом: исправление багов, улучшение функциональности и скорости работы сервиса',
+				text: '— Работа с legacy кодом: исправление багов, улучшение функциональности и скорости работы сервиса'
 			},
 			{
-				text: '— Оптимизация скорости загрузки сайтов (critical css, lazy load изображений, отложенная загрузка пользовательских скриптов)',
-			},
-		],
+				text: '— Оптимизация скорости загрузки сайтов (critical css, lazy load изображений, отложенная загрузка пользовательских скриптов)'
+			}
+		]
 	},
 	{
 		id: 1,
@@ -73,12 +73,12 @@ const works = [
 		title: 'Junior Frontend developer',
 		description: [
 			{
-				text: '— Разработка SPA на Vue.js v2',
+				text: '— Разработка SPA на Vue.js v2'
 			},
 			{
-				text: '— Разработка сайтов на посадку Битрикс24 на нативном JavaScript и jQuery',
-			},
-		],
+				text: '— Разработка сайтов на посадку Битрикс24 на нативном JavaScript и jQuery'
+			}
+		]
 	},
 	{
 		id: 0,
@@ -88,19 +88,19 @@ const works = [
 		title: 'Junior Frontend developer',
 		description: [
 			{
-				text: '— Техническая поддержка сайта написанного на php-фреймворке Yii v1.1',
+				text: '— Техническая поддержка сайта написанного на php-фреймворке Yii v1.1'
 			},
 			{
-				text: '— Принимал участие в разработке нового сайта компании',
+				text: '— Принимал участие в разработке нового сайта компании'
 			},
 			{
-				text: '— Разработка SPA на Vue.js v2',
+				text: '— Разработка SPA на Vue.js v2'
 			},
 			{
-				text: '— Разработка на Node.js - создание отчетов (генерация html документов) по большому количеству данных из имеющихся json-файлов от медицинских учреждений',
-			},
-		],
-	},
+				text: '— Разработка на Node.js - создание отчетов (генерация html документов) по большому количеству данных из имеющихся json-файлов от медицинских учреждений'
+			}
+		]
+	}
 ];
 
 const selfEmployment = [
@@ -112,13 +112,13 @@ const selfEmployment = [
 		title: 'Middle+ Frontend developer',
 		description: [
 			{
-				text: '— Разработка новго сайта компании на Nuxt.js v3 (composition-api) + TypeScript',
+				text: '— Разработка новго сайта компании на Nuxt.js v3 (composition-api) + TypeScript'
 			},
 			{
-				text: '— Оптимизация скорости работы сайта (кастомная сборка иконок, кеширование компонентов на сервере)',
-			},
-		],
-	},
+				text: '— Оптимизация скорости работы сайта (кастомная сборка иконок, кеширование компонентов на сервере)'
+			}
+		]
+	}
 ];
 
 const education = [
@@ -128,7 +128,7 @@ const education = [
 		company: 'Томский Государственный Архитектурно-Строительный Университет',
 		companyLink: 'https://tsuab.ru',
 		title: 'Прикладная информатика в менеджменте',
-		description: [],
+		description: []
 	},
 	{
 		id: 1,
@@ -140,7 +140,7 @@ const education = [
 			// {
 			// 	text: '— 111',
 			// },
-		],
+		]
 	},
 	{
 		id: 0,
@@ -152,8 +152,8 @@ const education = [
 			// {
 			// 	text: '— 111',
 			// },
-		],
-	},
+		]
+	}
 ];
 </script>
 

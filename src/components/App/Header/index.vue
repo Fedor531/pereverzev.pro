@@ -52,12 +52,12 @@ const toggleMenu = () => {
 const nav: MenuItem[] = [
 	{
 		path: '/',
-		titleKey: 'main',
+		titleKey: 'main'
 	},
 	{
 		path: '/resume',
-		titleKey: 'resume',
-	},
+		titleKey: 'resume'
+	}
 	// {
 	// 	path: '/portfolio',
 	// 	title: 'Портфолио',
