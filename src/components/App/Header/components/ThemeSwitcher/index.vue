@@ -19,25 +19,25 @@
 </template>
 
 <script lang="ts" setup>
-const config = useRuntimeConfig();
-const host = config.public.NUXT_SITE_HOST;
+const { public: { NUXT_SITE_HOST, NUXT_ENVIRONMENT } } = useRuntimeConfig();
+const domain = NUXT_ENVIRONMENT === 'local' ? 'localhost' : `.${NUXT_SITE_HOST}`;
 
 const switchers = [
 	{
 		id: 'light',
 		title: 'Светлая',
-		icon: 'sun',
+		icon: 'sun'
 	},
 	{
 		id: 'auto',
 		title: 'Системная',
-		icon: 'circle',
+		icon: 'circle'
 	},
 	{
 		id: 'dark',
 		title: 'Тёмная',
-		icon: 'moon',
-	},
+		icon: 'moon'
+	}
 ];
 
 const colorScheme = ref<'light' | 'auto' | 'dark'>('auto');
@@ -55,7 +55,13 @@ onMounted(() => {
 	darkStyles = document.querySelectorAll('link[rel=stylesheet][data-theme=dark]');
 });
 
-const colorSchemeCookie = useCookie('color-scheme', { domain: `.${host}`, maxAge: 2678400 });
+const colorSchemeCookie = useCookie(
+	'color-scheme',
+	{
+		domain,
+		maxAge: 2678400
+	}
+);
 
 function setScheme(scheme) {
 	colorScheme.value = scheme;

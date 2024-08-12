@@ -61,7 +61,6 @@ export default defineNuxtConfig({
 				},
 			],
 			meta: [
-				// Чтобы сафари не выделял номера и адреса
 				{ name: 'format-detection', content: 'telephone=no' },
 				{ name: 'format-detection', content: 'address=no' },
 				{ name: 'author', content: 'Fedor Pereverzev <fedor531@yandex.ru>' },
