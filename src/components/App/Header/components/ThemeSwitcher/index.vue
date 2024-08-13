@@ -49,10 +49,12 @@ if (savedScheme) {
 
 let lightStyles = null;
 let darkStyles = null;
+let themeColor: HTMLElement | null = null;
 
 onMounted(() => {
 	lightStyles = document.querySelectorAll('link[rel=stylesheet][data-theme=light]');
 	darkStyles = document.querySelectorAll('link[rel=stylesheet][data-theme=dark]');
+	themeColor = document.querySelector('meta[name=theme-color]');
 });
 
 const colorSchemeCookie = useCookie(
@@ -86,6 +88,10 @@ function switchMedia(scheme) {
 	else {
 		lightMedia = (scheme === 'light') ? 'all' : 'not all';
 		darkMedia = (scheme === 'dark') ? 'all' : 'not all';
+	}
+
+	if (themeColor) {
+		themeColor.setAttribute('content', (scheme === 'dark' ? '#222' : '#fff'))
 	}
 
 	[...lightStyles].forEach((link) => {
