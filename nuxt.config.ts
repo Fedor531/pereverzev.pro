@@ -78,7 +78,7 @@ export default defineNuxtConfig({
 				{
 					name: 'theme-color',
 					media: '(prefers-color-scheme: dark)',
-					content: '#006eff',
+					content: '#006eff'
 				},
 			],
 		},
