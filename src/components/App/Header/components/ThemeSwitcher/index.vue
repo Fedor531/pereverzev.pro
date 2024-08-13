@@ -53,8 +53,8 @@ let lightStyles = null;
 let darkStyles = null;
 
 onMounted(() => {
-	lightStyles = document.querySelector('link[data-theme=light]');
-	darkStyles = document.querySelector('link[data-theme=dark]');
+	lightStyles = document.querySelectorAll('link[data-theme=light]');
+	darkStyles = document.querySelectorAll('link[data-theme=dark]');
 });
 
 const colorSchemeCookie = useCookie(
