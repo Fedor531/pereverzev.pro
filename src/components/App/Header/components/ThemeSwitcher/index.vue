@@ -49,8 +49,8 @@ if (savedScheme) {
 	colorScheme.value = savedScheme;
 }
 
-let lightStyles = null;
-let darkStyles = null;
+let lightStyles: NodeListOf<Element> | null = null;
+let darkStyles: NodeListOf<Element> | null = null;
 
 onMounted(() => {
 	lightStyles = document.querySelectorAll('link[data-theme=light]');
@@ -68,7 +68,7 @@ const colorSchemeCookie = useCookie(
 function setScheme(scheme: ColorScheme) {
 	colorScheme.value = scheme;
 	switchMedia(scheme);
-	colorSchemeCookie.value = (scheme !== 'auto') ? scheme : ''
+	colorSchemeCookie.value = (scheme !== 'auto') ? scheme : '';
 }
 
 function switchMedia(scheme: ColorScheme) {
@@ -76,12 +76,12 @@ function switchMedia(scheme: ColorScheme) {
 	const darkMedia = (scheme === 'auto') ? '(prefers-color-scheme: dark)' : (scheme === 'dark' ? 'all' : 'not all');
 
 
-	[...lightStyles].forEach((link) => {
-		link.media = lightMedia;
+	[...lightStyles!].forEach((link) => {
+		(link as HTMLLinkElement).media = lightMedia;
 	});
 
-	[...darkStyles].forEach((link) => {
-		link.media = darkMedia;
+	[...darkStyles!].forEach((link) => {
+		(link as HTMLLinkElement).media = darkMedia;
 	});
 }
 </script>
