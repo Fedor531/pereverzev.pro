@@ -90,9 +90,9 @@ function switchMedia(scheme) {
 		darkMedia = (scheme === 'dark') ? 'all' : 'not all';
 	}
 
-	if (themeColor) {
-		themeColor.setAttribute('content', (scheme === 'dark' ? '#222' : '#fff'))
-	}
+	// if (themeColor) {
+	// 	themeColor.setAttribute('content', (scheme === 'dark' ? '#222' : '#fff'))
+	// }
 
 	[...lightStyles].forEach((link) => {
 		link.media = lightMedia;

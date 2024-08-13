@@ -12,12 +12,12 @@ export default () => {
 	// <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#273a43">
 
 	useServerHead({
-		meta: [
-			{
-				name: 'theme-color',
-				content: colorScheme.value === 'dark' ? '#222' : '#fff',
-			},
-		],
+		// meta: [
+		// 	{
+		// 		name: 'theme-color',
+		// 		content: colorScheme.value === 'dark' ? '#222' : '#fff',
+		// 	},
+		// ],
 		link: [
 			{
 				'data-theme': 'light',
