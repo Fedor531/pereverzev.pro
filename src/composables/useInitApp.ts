@@ -15,7 +15,7 @@ export default () => {
 				'data-theme': 'light',
 				name: 'theme-color',
 				media: lightMedia,
-				content: '#fff',
+				content: 'var(--secondary-text-color)',
 			},
 			{
 				'data-theme': 'dark',
