@@ -53,8 +53,8 @@ let lightStyles: NodeListOf<Element> | null = null;
 let darkStyles: NodeListOf<Element> | null = null;
 
 onMounted(() => {
-	lightStyles = document.querySelectorAll('link[data-theme=light]');
-	darkStyles = document.querySelectorAll('link[data-theme=dark]');
+	lightStyles = document.querySelectorAll('[data-theme=light]');
+	darkStyles = document.querySelectorAll('[data-theme=dark]');
 });
 
 const colorSchemeCookie = useCookie(
