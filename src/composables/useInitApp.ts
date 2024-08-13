@@ -12,11 +12,13 @@ export default () => {
 	useServerHead({
 		meta: [
 			{
+				'data-theme': 'light',
 				name: 'theme-color',
 				media: lightMedia,
 				content: '#fff',
 			},
 			{
+				'data-theme': 'dark',
 				name: 'theme-color',
 				media: darkMedia,
 				content: '#222'

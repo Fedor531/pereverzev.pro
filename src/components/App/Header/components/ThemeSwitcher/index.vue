@@ -10,7 +10,7 @@
 			:class="{ 'is-active': colorScheme === item.id }"
 			:aria-label="item.title"
 			:title="item.title"
-			@click="setScheme(item.id)"
+			@click="setScheme(item.id as ColorScheme)"
 		>
 			<UiIcon :name="item.icon" />
 		</button>
@@ -40,8 +40,10 @@ const switchers = [
 	}
 ];
 
-const colorScheme = ref<'light' | 'auto' | 'dark'>('auto');
-const savedScheme = useCookie<'light' | 'auto' | 'dark'>('color-scheme').value;
+type ColorScheme = 'light' | 'auto' | 'dark'
+
+const colorScheme = ref<ColorScheme>('auto');
+const savedScheme = useCookie<ColorScheme>('color-scheme').value;
 
 if (savedScheme) {
 	colorScheme.value = savedScheme;
@@ -49,12 +51,15 @@ if (savedScheme) {
 
 let lightStyles = null;
 let darkStyles = null;
-let themeColor: HTMLElement | null = null;
+let lightThemeColor = null;
+let darkThemeColor = null;
 
 onMounted(() => {
-	lightStyles = document.querySelectorAll('link[rel=stylesheet][data-theme=light]');
-	darkStyles = document.querySelectorAll('link[rel=stylesheet][data-theme=dark]');
-	themeColor = document.querySelector('meta[name=theme-color]');
+	lightStyles = document.querySelector('link[rel=stylesheet][data-theme=light]');
+	darkStyles = document.querySelector('link[rel=stylesheet][data-theme=dark]');
+
+	lightThemeColor = document.querySelector('meta[name=theme-color][data-theme=light]');
+	darkThemeColor = document.querySelector('meta[name=theme-color][data-theme=dark]');
 });
 
 const colorSchemeCookie = useCookie(
@@ -65,7 +70,7 @@ const colorSchemeCookie = useCookie(
 	}
 );
 
-function setScheme(scheme) {
+function setScheme(scheme: ColorScheme) {
 	colorScheme.value = scheme;
 	switchMedia(scheme);
 
@@ -77,30 +82,12 @@ function setScheme(scheme) {
 	}
 }
 
-function switchMedia(scheme) {
-	let lightMedia;
-	let darkMedia;
+function switchMedia(scheme: ColorScheme) {
+	const lightMedia = (scheme === 'auto') ? '(prefers-color-scheme: light)' : (scheme === 'light' ? 'all' : 'not all');
+	const darkMedia = (scheme === 'auto') ? '(prefers-color-scheme: dark)' : (scheme === 'dark' ? 'all' : 'not all');
 
-	if (scheme === 'auto') {
-		lightMedia = '(prefers-color-scheme: light)';
-		darkMedia = '(prefers-color-scheme: dark)';
-	}
-	else {
-		lightMedia = (scheme === 'light') ? 'all' : 'not all';
-		darkMedia = (scheme === 'dark') ? 'all' : 'not all';
-	}
-
-	// if (themeColor) {
-	// 	themeColor.setAttribute('content', (scheme === 'dark' ? '#222' : '#fff'))
-	// }
-
-	[...lightStyles].forEach((link) => {
-		link.media = lightMedia;
-	});
-
-	[...darkStyles].forEach((link) => {
-		link.media = darkMedia;
-	});
+	lightStyles.media = lightThemeColor.media = lightMedia;
+	darkStyles.media = darkThemeColor.media = darkMedia;
 }
 </script>
 
