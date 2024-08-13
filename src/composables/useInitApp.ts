@@ -15,14 +15,14 @@ export default () => {
 				'data-theme': 'light',
 				name: 'theme-color',
 				media: lightMedia,
-				content: 'var(--secondary-text-color)',
+				content: '#fff'
 			},
 			{
 				'data-theme': 'dark',
 				name: 'theme-color',
 				media: darkMedia,
 				content: '#222'
-			},
+			}
 		],
 		link: [
 			{
