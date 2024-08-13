@@ -1,4 +1,5 @@
 cd /var/www/pereverzev.pro/nuxt
 sudo docker-compose down
-docker system prune -a
+sudo docker rm -vf $(docker ps -aq)
+sudo docker rmi -f $(docker images -aq)
 sudo docker-compose up -d
