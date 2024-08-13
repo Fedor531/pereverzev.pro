@@ -51,15 +51,10 @@ if (savedScheme) {
 
 let lightStyles = null;
 let darkStyles = null;
-let lightThemeColor = null;
-let darkThemeColor = null;
 
 onMounted(() => {
-	lightStyles = document.querySelector('link[rel=stylesheet][data-theme=light]');
-	darkStyles = document.querySelector('link[rel=stylesheet][data-theme=dark]');
-
-	lightThemeColor = document.querySelector('meta[name=theme-color][data-theme=light]');
-	darkThemeColor = document.querySelector('meta[name=theme-color][data-theme=dark]');
+	lightStyles = document.querySelector('link[data-theme=light]');
+	darkStyles = document.querySelector('link[data-theme=dark]');
 });
 
 const colorSchemeCookie = useCookie(
@@ -73,21 +68,21 @@ const colorSchemeCookie = useCookie(
 function setScheme(scheme: ColorScheme) {
 	colorScheme.value = scheme;
 	switchMedia(scheme);
-
-	if (scheme === 'auto') {
-		colorSchemeCookie.value = '';
-	}
-	else {
-		colorSchemeCookie.value = scheme;
-	}
+	colorSchemeCookie.value = (scheme !== 'auto') ? scheme : ''
 }
 
 function switchMedia(scheme: ColorScheme) {
 	const lightMedia = (scheme === 'auto') ? '(prefers-color-scheme: light)' : (scheme === 'light' ? 'all' : 'not all');
 	const darkMedia = (scheme === 'auto') ? '(prefers-color-scheme: dark)' : (scheme === 'dark' ? 'all' : 'not all');
 
-	lightStyles.media = lightThemeColor.media = lightMedia;
-	darkStyles.media = darkThemeColor.media = darkMedia;
+
+	[...lightStyles].forEach((link) => {
+		link.media = lightMedia;
+	});
+
+	[...darkStyles].forEach((link) => {
+		link.media = darkMedia;
+	});
 }
 </script>
 
