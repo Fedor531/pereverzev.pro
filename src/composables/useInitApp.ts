@@ -8,16 +8,20 @@ export default () => {
 		lightMedia = (colorScheme.value === 'light') ? 'all' : 'not all';
 		darkMedia = (colorScheme.value === 'dark') ? 'all' : 'not all';
 	}
-	// <meta name="theme-color" media="(prefers-color-scheme: light)" content="#c7cbcc">
-	// <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#273a43">
 
 	useServerHead({
-		// meta: [
-		// 	{
-		// 		name: 'theme-color',
-		// 		content: colorScheme.value === 'dark' ? '#222' : '#fff',
-		// 	},
-		// ],
+		meta: [
+			{
+				name: 'theme-color',
+				media: lightMedia,
+				content: '#fff',
+			},
+			{
+				name: 'theme-color',
+				media: darkMedia,
+				content: '#222'
+			},
+		],
 		link: [
 			{
 				'data-theme': 'light',
