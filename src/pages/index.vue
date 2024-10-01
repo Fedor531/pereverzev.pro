@@ -13,6 +13,9 @@ useServerHead({
 		},
 		{
 			src: 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js'
+		},
+		{
+			src: 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js'
 		}
 	]
 });
