@@ -11,5 +11,5 @@ services:
         NUXT_SITE_PROTOCOL: https://
         NUXT_SITE_HOST: pereverzev.pro
     ports:
-      - "3000:3000"
+      - "3031:3000"
     mem_limit: 1024m
