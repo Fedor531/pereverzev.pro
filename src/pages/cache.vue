@@ -57,16 +57,16 @@ const fetchClearCache = async () => {
 	}
 }
 
-onMounted(() => {
-	if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
-		navigator.serviceWorker
-			.register('/apiCacheWorker.js', { scope: '/' })
-			.then((res) => {
-				console.log('Service Worker зарегистрирован', res)
-			})
-			.catch((err) => {
-				console.error('Service worker registration failed', err)
-			})
-	}
-})
+// onMounted(() => {
+// 	if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+// 		navigator.serviceWorker
+// 			.register('/apiCacheWorker.js', { scope: '/' })
+// 			.then((res) => {
+// 				console.log('Service Worker зарегистрирован', res)
+// 			})
+// 			.catch((err) => {
+// 				console.error('Service worker registration failed', err)
+// 			})
+// 	}
+// })
 </script>

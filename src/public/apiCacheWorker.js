@@ -55,8 +55,16 @@ const handleClearCache = async (request) => {
 
 	await Promise.all(versionsToDelete.map(key => cache.delete(key)))
 
-	// Получаем свежий ответ
-	return fetch(request)
+	// Возвращаем JSON с информацией об очистке
+	return new Response(JSON.stringify({
+		success: true,
+		message: 'Cache cleared',
+		url: baseUrl,
+		clearedCount: versionsToDelete.length
+	}), {
+		status: 200,
+		headers: { 'Content-Type': 'application/json' }
+	})
 }
 
 const wrapWithMeta = async (response, ttlMs) => {
