@@ -5,6 +5,7 @@ const getBaseUrl = (url) => {
 	const urlObj = new URL(url)
 	urlObj.searchParams.delete('_cacheTtl')
 	urlObj.searchParams.delete('_cacheClear')
+	urlObj.searchParams.delete('_cacheClearAll')
 	return urlObj.toString()
 }
 
@@ -67,6 +68,25 @@ const handleClearCache = async (request) => {
 	})
 }
 
+// Новая функция: очистка ВСЕГО кеша
+const handleClearAllCache = async (request) => {
+	const cache = await caches.open(CACHE_NAME)
+	const cacheKeys = await cache.keys()
+
+	// Удаляем ВСЁ
+	await Promise.all(cacheKeys.map(key => cache.delete(key)))
+
+	// Возвращаем JSON
+	return new Response(JSON.stringify({
+		success: true,
+		message: 'All cache cleared',
+		clearedCount: cacheKeys.length
+	}), {
+		status: 200,
+		headers: { 'Content-Type': 'application/json' }
+	})
+}
+
 const wrapWithMeta = async (response, ttlMs) => {
 	const cloned = response.clone()
 	const body = await cloned.blob()
@@ -89,7 +109,13 @@ self.addEventListener('fetch', (event) => {
 
 	const url = new URL(request.url)
 
-	// Очистка кеша после действия пользователя
+	// Очистка всего кеша
+	if (url.searchParams.has('_cacheClearAll')) {
+		event.respondWith(handleClearAllCache(request))
+		return
+	}
+
+	// Очистка конкретного кеша
 	if (url.searchParams.has('_cacheClear')) {
 		event.respondWith(handleClearCache(request))
 		return
