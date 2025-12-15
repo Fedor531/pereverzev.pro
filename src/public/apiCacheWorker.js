@@ -49,14 +49,12 @@ const handleClearCache = async (request) => {
 	const baseUrl = getBaseUrl(request.url)
 	const cacheKeys = await cache.keys()
 
-	// Удаляем все версии этого запроса
 	const versionsToDelete = cacheKeys.filter(key =>
 		getBaseUrl(key.url) === baseUrl
 	)
 
 	await Promise.all(versionsToDelete.map(key => cache.delete(key)))
 
-	// Возвращаем JSON с информацией об очистке
 	return new Response(JSON.stringify({
 		success: true,
 		message: 'Cache cleared',
@@ -68,15 +66,12 @@ const handleClearCache = async (request) => {
 	})
 }
 
-// Новая функция: очистка ВСЕГО кеша
 const handleClearAllCache = async (request) => {
 	const cache = await caches.open(CACHE_NAME)
 	const cacheKeys = await cache.keys()
 
-	// Удаляем ВСЁ
 	await Promise.all(cacheKeys.map(key => cache.delete(key)))
 
-	// Возвращаем JSON
 	return new Response(JSON.stringify({
 		success: true,
 		message: 'All cache cleared',
@@ -121,7 +116,7 @@ self.addEventListener('fetch', (event) => {
 		return
 	}
 
-	// Обычное кеширование при загрузке страницы
+	// Обычное кеширование при наличии query _cacheTtl
 	const ttlParam = url.searchParams.get('_cacheTtl')
 	const ttlMs = ttlParam ? Number(ttlParam) : 0
 
