@@ -1,33 +1,63 @@
 const CACHE_NAME = 'api-cache-v1'
 
+// Удаляем оба параметра кеша для сравнения URL
+const getBaseUrl = (url) => {
+	const urlObj = new URL(url)
+	urlObj.searchParams.delete('_cacheTtl')
+	urlObj.searchParams.delete('_cacheClear')
+	return urlObj.toString()
+}
+
 const handleWithCacheTtl = async (request, ttlMs) => {
 	const cache = await caches.open(CACHE_NAME)
+	const baseUrl = getBaseUrl(request.url)
 
-	let cached = await cache.match(request)
+	// Ищем кешированные версии
+	const cacheKeys = await cache.keys()
+	const cachedVersions = cacheKeys.filter(key =>
+		getBaseUrl(key.url) === baseUrl
+	)
 
-	if (cached) {
+	if (cachedVersions.length > 0) {
+		const cached = await cache.match(cachedVersions[0])
 		const createdAt = Number(cached.headers.get('x-sw-cache-created-at') || '0')
 		const storedTtl = Number(cached.headers.get('x-sw-cache-ttl') || '0') || ttlMs
-
 		const isExpired = !createdAt || (Date.now() - createdAt > storedTtl)
 
 		if (!isExpired) {
 			return cached
-		} else {
-			await cache.delete(request)
-			cached = null
 		}
 	}
 
+	// Всегда получаем свежие данные (кеш истёк или его нет)
 	const networkResponse = await fetch(request)
 
 	if (networkResponse.ok) {
 		const responseWithMeta = await wrapWithMeta(networkResponse, ttlMs)
+		// Удаляем старые версии перед сохранением новой
+		await Promise.all(cachedVersions.map(key => cache.delete(key)))
 		await cache.put(request, responseWithMeta.clone())
 		return responseWithMeta
 	}
 
 	return networkResponse
+}
+
+const handleClearCache = async (request) => {
+	console.log('handleClearCache')
+	const cache = await caches.open(CACHE_NAME)
+	const baseUrl = getBaseUrl(request.url)
+	const cacheKeys = await cache.keys()
+
+	// Удаляем все версии этого запроса
+	const versionsToDelete = cacheKeys.filter(key =>
+		getBaseUrl(key.url) === baseUrl
+	)
+
+	await Promise.all(versionsToDelete.map(key => cache.delete(key)))
+
+	// Получаем свежий ответ
+	return fetch(request)
 }
 
 const wrapWithMeta = async (response, ttlMs) => {
@@ -48,28 +78,21 @@ const wrapWithMeta = async (response, ttlMs) => {
 self.addEventListener('fetch', (event) => {
 	const request = event.request
 
-	console.log('request', request)
-
-	// только GET-запросы
-	if (request.method !== 'GET') {
-		return
-	}
+	if (request.method !== 'GET') return
 
 	const url = new URL(request.url)
 
-	console.log('url', url)
-
-	const ttlParam = url.searchParams.get('_cacheTtl')
-
-	console.log('ttlParam', ttlParam)
-
-	const ttlMs = ttlParam ? Number(ttlParam) : 0
-
-	console.log('ttlMs', ttlMs)
-
-	if (!ttlMs || ttlMs <= 0) {
+	// Очистка кеша после действия пользователя
+	if (url.searchParams.has('_cacheClear')) {
+		event.respondWith(handleClearCache(request))
 		return
 	}
 
-	event.respondWith(handleWithCacheTtl(request, ttlMs))
+	// Обычное кеширование при загрузке страницы
+	const ttlParam = url.searchParams.get('_cacheTtl')
+	const ttlMs = ttlParam ? Number(ttlParam) : 0
+
+	if (ttlMs && ttlMs > 0) {
+		event.respondWith(handleWithCacheTtl(request, ttlMs))
+	}
 })
