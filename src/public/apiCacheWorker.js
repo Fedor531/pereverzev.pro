@@ -44,7 +44,6 @@ const handleWithCacheTtl = async (request, ttlMs) => {
 }
 
 const handleClearCache = async (request) => {
-	console.log('handleClearCache')
 	const cache = await caches.open(CACHE_NAME)
 	const baseUrl = getBaseUrl(request.url)
 	const cacheKeys = await cache.keys()
