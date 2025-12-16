@@ -29,7 +29,7 @@ const handleWithCacheTtl = async (request, ttlMs) => {
 		}
 	}
 
-	// Всегда получаем свежие данные (кеш истёк или его нет)
+	// Получаем свежие данные (кеш истёк или его нет)
 	const networkResponse = await fetch(request)
 
 	if (networkResponse.ok) {
@@ -99,7 +99,9 @@ const wrapWithMeta = async (response, ttlMs) => {
 self.addEventListener('fetch', (event) => {
 	const request = event.request
 
-	if (request.method !== 'GET') return
+	if (request.method !== 'GET') {
+		return
+	}
 
 	const url = new URL(request.url)
 
