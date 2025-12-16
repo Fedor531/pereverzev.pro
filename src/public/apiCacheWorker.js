@@ -1,6 +1,5 @@
 const CACHE_NAME = 'api-cache-v1'
 
-// Удаляем оба параметра кеша для сравнения URL
 const getBaseUrl = (url) => {
 	const urlObj = new URL(url)
 	urlObj.searchParams.delete('_cacheTtl')
